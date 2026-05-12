@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#070812" />
+    <title>Codex Prism</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="stage" aria-label="Codex Prism interactive game">
+      <canvas id="game" aria-hidden="true"></canvas>
+
+      <section class="hud" aria-live="polite">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span>CODEX PRISM</span>
+        </div>
+        <div class="meters">
+          <div class="meter">
+            <span class="label">TIME</span>
+            <strong id="time">75</strong>
+          </div>
+          <div class="meter">
+            <span class="label">SCORE</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="meter combo">
+            <span class="label">SYNC</span>
+            <strong id="combo">x1</strong>
+          </div>
+        </div>
+        <button id="fullscreen" class="icon-button" type="button" aria-label="Enter fullscreen">FS</button>
+      </section>
+
+      <section id="intro" class="intro">
+        <p class="kicker">AI CO-PLAY PUZZLE</p>
+        <h1>Codex Prism</h1>
+        <p id="introLine" class="signal">Touch to synthesize.</p>
+      </section>
+
+      <section id="caption" class="caption" aria-live="polite">
+        <span id="captionText">Ready.</span>
+      </section>
+
+      <section id="finale" class="finale" hidden>
+        <p class="kicker">SESSION COMPLETE</p>
+        <h2 id="rank">Prism Architect</h2>
+        <p id="finalScore">0 pts</p>
+        <p class="signal">Codex generated this interactive demo.</p>
+        <button id="restart" class="restart" type="button">REPLAY</button>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
