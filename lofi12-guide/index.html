@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#173f3b" />
+    <meta name="color-scheme" content="light" />
+    <meta name="description" content="LIVEN Lofi-12の操作を音声や文字でやさしく案内するオフライン対応マニュアル" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Lofi-12 Guide</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="brand" type="button" data-route="home" aria-label="ホームへ戻る">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><strong>LOFI-12</strong><small>やさしいガイド</small></span>
+        </button>
+        <div class="top-actions">
+          <span class="offline-badge" id="networkBadge"><span></span> オフラインOK</span>
+          <button class="icon-button is-hidden" id="installButton" type="button" aria-label="アプリをインストール">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main id="app" tabindex="-1"></main>
+
+      <nav class="bottom-nav" aria-label="メインメニュー">
+        <button type="button" data-route="home" data-nav="home" aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 10 8-6 8 6v10h-6v-6h-4v6H4Z"/></svg>
+          <span>ホーム</span>
+        </button>
+        <button type="button" data-route="guides" data-nav="guides">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H7a2 2 0 0 1-2-2Zm0 0v14a2 2 0 0 1 2-2h12M9 8h6m-6 4h6"/></svg>
+          <span>ガイド</span>
+        </button>
+        <button type="button" data-route="glossary" data-nav="glossary">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4M8.5 11h5M11 8.5v5"/></svg>
+          <span>ことば</span>
+        </button>
+        <button type="button" data-route="settings" data-nav="settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="M4.9 7.1 3.5 9.5l1.8 1.3a7 7 0 0 0 0 2.4l-1.8 1.3 1.4 2.4 2-.9a7 7 0 0 0 2 1.2l.2 2.3h2.8l.2-2.3a7 7 0 0 0 2-1.2l2 .9 1.4-2.4-1.8-1.3a7 7 0 0 0 0-2.4l1.8-1.3-1.4-2.4-2 .9a7 7 0 0 0-2-1.2l-.2-2.3H9.1l-.2 2.3a7 7 0 0 0-2 1.2Z"/></svg>
+          <span>設定</span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
